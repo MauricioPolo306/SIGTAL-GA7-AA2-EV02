@@ -1,17 +1,9 @@
-ENLACE DEL REPOSITORIO GITHUB
-==============================
+﻿REPOSITORIO GITHUB - GA7-220501096-AA2-EV02
 
-Proyecto:
-SIGTAL - Sistema Integral de Gestión para Taller Automotriz Electricista Londoño
+**Proyecto**: SIGTAL - Sistema Integral de Gestión para Taller Automotriz Londoño
 
-Módulo:
-Clientes y Vehículos
+**Evidencia**: GA7-220501096-AA2-EV02 - Módulos de software codificados y probados
 
-Evidencia:
-GA7-220501096-AA3-EV01
+**Repositorio**:
 
-Repositorio:
-https://github.com/MauricioPolo306/SIGTAL-Modulo-Clientes-Vehiculos
-
-Rama:
-main
+https://github.com/MauricioPolo306/SIGTAL-GA7-AA2-EV02.git

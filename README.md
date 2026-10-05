@@ -1,301 +1,116 @@
-============================================================
-SIGTAL - SISTEMA INTEGRAL DE GESTIÓN PARA TALLER AUTOMOTRIZ
-MÓDULO CLIENTES Y VEHÍCULOS
-============================================================
+﻿# SIGTAL - GA7-220501096-AA2-EV02
 
-Evidencia:
-GA7-220501096-AA3-EV01
-Codificación de módulos del software
+## Módulos de software codificados y probados
 
-Proyecto:
-Sistema Integral de Gestión para Taller Automotriz Londoño
+**Proyecto:** SIGTAL - Sistema Integral de Gestión para Taller Automotriz Londoño
 
-Tecnología:
-Java Web - JSP - Servlets - Maven - MariaDB
+**Evidencia:** GA7-220501096-AA2-EV02 - Módulos de software codificados y probados
 
-============================================================
-1. DESCRIPCIÓN DEL PROYECTO
-============================================================
+## Descripción
 
-SIGTAL es un sistema web desarrollado para apoyar la gestión
-administrativa y operativa de un taller automotriz.
+Este proyecto corresponde al desarrollo del módulo de Clientes y Vehículos del sistema SIGTAL.
 
-Para la presente evidencia se seleccionó el módulo:
+El módulo fue desarrollado como una aplicación web utilizando Java Servlets, JSP, JDBC y MySQL, de acuerdo con los requerimientos establecidos para la evidencia GA7-220501096-AA2-EV02.
 
-CLIENTES Y VEHÍCULOS
+## Funcionalidades
 
-Este módulo permite gestionar la información de los clientes
-y los vehículos asociados a cada cliente.
-
-============================================================
-2. FUNCIONALIDADES DEL MÓDULO
-============================================================
-
-El módulo permite:
-
+### Clientes
 - Registrar clientes.
-- Consultar clientes.
+- Listar clientes.
+- Editar clientes.
 - Actualizar clientes.
 - Eliminar clientes.
-- Registrar vehículos.
-- Consultar vehículos.
-- Actualizar vehículos.
-- Eliminar vehículos.
-- Asociar vehículos con clientes.
 - Validar documentos duplicados.
 - Validar teléfonos duplicados.
 - Validar correos electrónicos duplicados.
-- Validar placas de vehículos duplicadas.
-- Visualizar mensajes de confirmación y error.
 
-============================================================
-3. TECNOLOGÍAS UTILIZADAS
-============================================================
+### Vehículos
 
-- Java JDK 21.
-- Java Servlets.
-- JSP (JavaServer Pages).
-- Maven.
-- MariaDB.
-- HTML5.
-- CSS3.
-- JavaScript.
-- Apache Tomcat 8.5.
-- NetBeans.
-- Git y GitHub.
+- Registrar vehículos.
+- Listar vehículos.
+- Consultar vehículos asociados a un cliente.
+- Editar vehículos.
+- Actualizar vehículos.
+- Eliminar vehículos.
+- Validar placas duplicadas.
 
-============================================================
-4. ESTRUCTURA DEL PROYECTO
-============================================================
+## Tecnologías
 
-MODULO_CLIENTES_VEHICULOS/
-│
-├── pom.xml
-│
-└── src/
-    └── main/
-        ├── java/
-        │   └── com/
-        │       └── mycompany/
-        │           └── sigtal/
-        │               ├── controlador/
-        │               │   ├── ClienteServlet.java
-        │               │   └── VehiculoServlet.java
-        │               │
-        │               ├── dao/
-        │               │   ├── ClienteDAO.java
-        │               │   └── VehiculoDAO.java
-        │               │
-        │               ├── modelo/
-        │               │   ├── Cliente.java
-        │               │   └── Vehiculo.java
-        │               │
-        │               └── util/
-        │                   └── ConexionBD.java
-        │
-        └── webapp/
-            ├── clientes.jsp
-            ├── index.jsp
-            ├── META-INF/
-            └── WEB-INF/
+- Java 21
+- Java Servlets
+- JSP
+- JDBC
+- MySQL / MariaDB
+- Apache Tomcat 10.1
+- Maven
+- HTML5
+- CSS
+- JavaScript
+- Git
+- GitHub
+- NetBeans
 
-============================================================
-5. BASE DE DATOS
-============================================================
+## Métodos HTTP
 
-El módulo utiliza MariaDB como sistema gestor de base de datos.
+El sistema utiliza:
 
-El script de creación se encuentra en:
+- GET para consultas, listados, edición y eliminación.
+- POST para registro y actualización de información.
 
-BaseDatos/clientes_vehiculos.sql
+## Base de datos
 
-Para instalar la base de datos:
+Base de datos utilizada:
 
-1. Abrir XAMPP.
-
-2. Iniciar los servicios:
-   - Apache
-   - MySQL
-
-3. Abrir phpMyAdmin mediante el botón "Admin" de MySQL.
-
-4. Seleccionar la opción "Importar".
-
-5. Seleccionar el archivo:
-
-   BaseDatos/clientes_vehiculos.sql
-
-6. Ejecutar la importación.
-
-El script crea la base de datos:
-
-   sigtal
-
-y las tablas:
-
-   clientes
-   vehiculos
-
-La relación entre las tablas permite asociar uno o varios
-vehículos con un cliente.
-
-============================================================
-6. CONFIGURACIÓN DE LA CONEXIÓN
-============================================================
-
-La conexión utilizada por el módulo es:
-
-Motor:
-MariaDB
-
-Host:
-localhost
-
-Puerto:
-3306
-
-Base de datos:
 sigtal
 
-Usuario:
-root
+Tablas principales:
 
-Contraseña:
-vacía
+- clientes
+- vehiculos
 
-URL JDBC:
+## Pruebas realizadas
 
-jdbc:mariadb://localhost:3306/sigtal
+Se realizaron pruebas de:
 
-La configuración se encuentra en:
+- Acceso al módulo de clientes.
+- Acceso al módulo de vehículos.
+- Registro de clientes.
+- Validación de documento duplicado.
+- Validación de teléfono duplicado.
+- Validación de correo duplicado.
+- Actualización de clientes.
+- Validación de documento duplicado durante actualización.
+- Registro de vehículos.
+- Validación de placa duplicada.
+- Actualización de vehículos.
+- Eliminación de vehículos.
+- Eliminación de clientes.
+- Verificación de registros directamente en MySQL.
 
-src/main/java/com/mycompany/sigtal/útil/ConexionBD.java
+## Construcción
 
-Código de conexión utilizado:
+Para compilar el proyecto:
 
-private static final String URL =
-    "jdbc:mariadb://localhost:3306/sigtal";
+mvn clean package
 
-private static final String USUARIO = "root";
+El resultado esperado es:
 
-private static final String CONTRASENA = "";
+BUILD SUCCESS
 
-Si la instalación local de MariaDB utiliza otros parámetros
-de conexión, se debe modificar la clase ConexionBD.java.
+El archivo WAR generado se encuentra en:
 
-============================================================
-7. EJECUCIÓN DEL PROYECTO
-============================================================
+target/MODULO-CLIENTES-VEHICULOS.war
 
-Para ejecutar el módulo:
+## Repositorio GitHub
 
-1. Abrir el proyecto en NetBeans.
+https://github.com/MauricioPolo306/SIGTAL-GA7-AA2-EV02.git
 
-2. Verificar que esté configurado el JDK 21.
+## Evidencia
 
-3. Verificar la conexión con MariaDB.
+GA7-220501096-AA2-EV02 - Módulos de software codificados y probados
 
-4. Verificar que Apache Tomcat 8.5 esté configurado.
+## Autor
 
-5. Ejecutar el proyecto mediante NetBeans.
-
-6. Acceder al módulo Clientes y Vehículos desde el navegador.
-
-El módulo puede utilizarse para realizar las operaciones
-CRUD sobre clientes y vehículos.
-
-============================================================
-8. ARQUITECTURA
-============================================================
-
-El módulo utiliza una arquitectura organizada por capas:
-
-MODELO
-- Cliente.java
-- Vehiculo.java
-
-CONTROLADOR
-- ClienteServlet.java
-- VehiculoServlet.java
-
-DAO
-- ClienteDAO.java
-- VehiculoDAO.java
-
-VISTA
-- clientes.jsp
-
-UTILIDAD
-- ConexionBD.java
-
-La separación de responsabilidades facilita el mantenimiento,
-organización y evolución del software.
-
-============================================================
-9. VALIDACIONES
-============================================================
-
-El módulo incorpora validaciones para evitar información
-duplicada.
-
-Clientes:
-
-- Documento único.
-- Teléfono único.
-- Correo electrónico único.
-
-Vehículos:
-
-- Placa única.
-
-Cuando se intenta registrar información duplicada, el sistema
-muestra un mensaje específico al usuario.
-
-============================================================
-10. CONTROL DE VERSIONES
-============================================================
-
-El código fuente del módulo se encuentra almacenado mediante
-Git y GitHub.
-
-Repositorio:
-
-https://github.com/MauricioPolo306/SIGTAL-Modulo-Clientes-Vehiculos
-
-Rama principal:
-
-main
-
-Primer commit:
-
-Primera version modulo Clientes y Vehiculos
-
-============================================================
-11. EVIDENCIA
-============================================================
-
-Esta implementación corresponde a:
-
-GA7-220501096-AA3-EV01
-
-Codificación de módulos del software Stand alone, web y móvil
-de acuerdo con el proyecto a desarrollar.
-
-Módulo seleccionado:
-
-Clientes y Vehículos
-
-============================================================
-12. AUTOR
-============================================================
-
-Autor:
 Mauricio Jose Polo Acosta
 
-Proyecto:
-SIGTAL - Sistema Integral de Gestión para Taller Automotriz
-Electricista Londoño
-
-============================================================
-FIN DEL README
-============================================================
+SENA
